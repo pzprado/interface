@@ -8,9 +8,10 @@ export enum SwapTab {
   Swap = 'swap',
   Limit = 'limit',
   Send = 'send',
+  Trail = 'trail'
 }
 
 export enum Field {
   INPUT = 'INPUT',
-  OUTPUT = 'OUTPUT',
+  OUTPUT = 'OUTPUT'
 }

@@ -164,6 +164,11 @@ export const routes: RouteDefinition[] = [
     getTitle: () => SwapTitle,
   }),
   createRouteDefinition({
+    path: '/trail',
+    getElement: () => <Swap />,
+    getTitle: () => SwapTitle,
+  }),
+  createRouteDefinition({
     path: '/swap',
     getElement: () => <Swap />,
     getTitle: () => SwapTitle,

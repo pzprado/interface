@@ -33,6 +33,7 @@ const PathnameToTab: { [key: string]: SwapTab } = {
   '/swap': SwapTab.Swap,
   '/send': SwapTab.Send,
   '/limit': SwapTab.Limit,
+  '/trail': SwapTab.Trail
 }
 
 export default function SwapHeader({ compact, syncTabToUrl }: { compact: boolean; syncTabToUrl: boolean }) {
@@ -93,6 +94,16 @@ export default function SwapHeader({ compact, syncTabToUrl }: { compact: boolean
             }}
           >
             <Trans>Limit</Trans>
+          </SwapHeaderTabButton>
+        )}
+         {limitsEnabled && chainId === ChainId.MAINNET && (
+          <SwapHeaderTabButton
+            $isActive={currentTab === SwapTab.Trail}
+            onClick={() => {
+              onTab(SwapTab.Trail)
+            }}
+          >
+            <Trans>Trail</Trans>
           </SwapHeaderTabButton>
         )}
         {sendEnabled && (

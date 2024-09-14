@@ -16,6 +16,7 @@ export const paths = [
   '/send',
   '/swap',
   '/limit',
+  '/trail',
   '/limits',
   '/pool/v2/find',
   '/pool/v2',
@@ -36,5 +37,5 @@ export const paths = [
   '/nfts/asset/:contractAddress/:tokenId',
   '/nfts/profile',
   '/nfts/collection/:contractAddress',
-  '/nfts/collection/:contractAddress/activity',
+  '/nfts/collection/:contractAddress/activity'
 ]

@@ -116,6 +116,8 @@ export function Swap({
                 <SwapForm onCurrencyChange={onCurrencyChange} disableTokenInputs={disableTokenInputs} />
               )}
               {currentTab === SwapTab.Limit && <LimitFormWrapper onCurrencyChange={onCurrencyChange} />}
+              {currentTab === SwapTab.Trail && <LimitFormWrapper onCurrencyChange={onCurrencyChange} />}
+
               {currentTab === SwapTab.Send && (
                 <SendForm disableTokenInputs={disableTokenInputs} onCurrencyChange={onCurrencyChange} />
               )}
