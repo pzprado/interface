@@ -23,6 +23,8 @@ export interface LimitState {
   // The limit form has 3 fields, but only two of them can be independent at a time.
   // Always prefer `marketPrice` be independent, so either derive the input amount or the output amount
   readonly isInputAmountFixed: boolean
+
+  trailPercentage: string
 }
 
 type LimitContextType = {
@@ -39,6 +41,7 @@ const DEFAULT_LIMIT_STATE = {
   outputAmount: '',
   expiry: Expiry.Week,
   isInputAmountFixed: true,
+  trailPercentage: '',
 }
 
 // exported for testing

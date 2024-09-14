@@ -96,16 +96,7 @@ export default function SwapHeader({ compact, syncTabToUrl }: { compact: boolean
             <Trans>Limit</Trans>
           </SwapHeaderTabButton>
         )}
-         {limitsEnabled && chainId === ChainId.MAINNET && (
-          <SwapHeaderTabButton
-            $isActive={currentTab === SwapTab.Trail}
-            onClick={() => {
-              onTab(SwapTab.Trail)
-            }}
-          >
-            <Trans>Trail</Trans>
-          </SwapHeaderTabButton>
-        )}
+      
         {sendEnabled && (
           <SwapHeaderTabButton
             $isActive={currentTab === SwapTab.Send}

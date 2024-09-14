@@ -131,3 +131,12 @@ export const StyledNumericalInput = styled(MemoizedInput)<{ $loading: boolean }>
   font-weight: 485;
   max-height: 44px;
 `
+
+export const SmallStyledNumericalInput = styled(MemoizedInput)<{ $loading: boolean }>`
+  ${loadingOpacityMixin};
+  text-align: left;
+  font-size: 16px;
+  font-weight: 485;
+  max-height: 44px;
+  max-width: 25px;
+`

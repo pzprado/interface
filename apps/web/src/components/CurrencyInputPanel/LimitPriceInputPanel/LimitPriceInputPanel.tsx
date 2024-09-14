@@ -1,7 +1,7 @@
 import { Currency, CurrencyAmount, Price } from '@uniswap/sdk-core'
 import { InputPanel } from 'components/CurrencyInputPanel/SwapCurrencyInputPanel'
 import CurrencyLogo from 'components/Logo/CurrencyLogo'
-import { StyledNumericalInput } from 'components/NumericalInput'
+import { StyledNumericalInput, SmallStyledNumericalInput } from 'components/NumericalInput'
 import Row from 'components/Row'
 import { parseUnits } from 'ethers/lib/utils'
 import JSBI from 'jsbi'
@@ -51,6 +51,10 @@ const OutputCurrencyButton = styled.button`
 const TextInputRow = styled.div`
   display: flex;
   flex-grow: 1;
+`
+
+const ShortInputWrapper = styled.div`
+  width: 60px; // Adjust this value as needed
 `
 
 const PRICE_ADJUSTMENT_PRESETS = [1, 5, 10]
@@ -155,6 +159,12 @@ export function LimitPriceInputPanel({ onCurrencySelect }: LimitPriceInputPanelP
 
   const presets = limitPriceInverted ? INVERTED_PRICE_ADJUSTMENT_PRESETS : PRICE_ADJUSTMENT_PRESETS
 
+  const [trailPercentage, setTrailPercentage] = useState('')
+
+  const PercentageSign = styled(ThemedText.BodyPrimary)`
+    font-size: 14px; // Match the input font size
+  `
+
   return (
     <Container>
       <Row justify="space-between">
@@ -236,6 +246,20 @@ export function LimitPriceInputPanel({ onCurrencySelect }: LimitPriceInputPanelP
               />
             )
           })}
+          <ThemedText.BodyPrimary>| Trail:</ThemedText.BodyPrimary>
+        
+
+          <SmallStyledNumericalInput
+            value={trailPercentage}
+            onUserInput={setTrailPercentage}
+            $loading={false}
+            placeholder="0.0"
+
+          />
+
+        
+          <PercentageSign>%</PercentageSign>
+          
         </Row>
       </Row>
       <CurrencySearchModal
