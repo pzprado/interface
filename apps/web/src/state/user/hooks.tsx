@@ -84,15 +84,17 @@ export function useUserSlippageTolerance(): [
   (slippageTolerance: Percent | SlippageTolerance.Auto) => void
 ] {
   const userSlippageToleranceRaw = useAppSelector((state) => {
+
     return state.user.userSlippageTolerance
   })
+
 
   // TODO(WEB-1985): Keep `userSlippageTolerance` as Percent in Redux store and remove this conversion
   const userSlippageTolerance = useMemo(
     () =>
       userSlippageToleranceRaw === SlippageTolerance.Auto
         ? SlippageTolerance.Auto
-        : new Percent(userSlippageToleranceRaw, 10_000),
+        : new Percent(userSlippageToleranceRaw ? userSlippageToleranceRaw : 50, 10_000),
     [userSlippageToleranceRaw]
   )
 
