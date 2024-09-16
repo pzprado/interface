@@ -26,6 +26,7 @@ const mockLimitContextValue = {
     isInputAmountFixed: true,
     limitPriceEdited: false,
     limitPriceInverted: false,
+    trailPercentage: ''
   },
   setLimitState: jest.fn(),
   derivedLimitInfo: {

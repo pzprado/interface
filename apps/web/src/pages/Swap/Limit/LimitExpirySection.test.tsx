@@ -12,6 +12,8 @@ const mockLimitContextValue = {
     outputAmount: '',
     expiry: Expiry.Day,
     isInputAmountFixed: true,
+    trailPercentage: ''
+    
   },
   setLimitState: jest.fn(),
   derivedLimitInfo: {
